@@ -1,0 +1,57 @@
+POST http://localhost:5000/api/v1/register HTTP/1.1
+content-type: application/json
+
+{
+    "accountType": "manager",
+    "details": {
+        "email": "adam@ataylor.xyz",
+        "name": "adam"
+    },
+    "password": "password"
+}
+
+###
+
+POST http://localhost:5000/api/v1/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "manager@example.com",
+    "password": "password"
+}
+
+
+###
+GET http://localhost:5000/api/v1/users/current HTTP/1.1
+Authorization: Bearer 83d3621c-4fed-4ed2-9e50-ffb0606b6159
+
+###
+POST http://localhost:5000/api/v1/restaurants HTTP/1.1
+Authorization: Bearer 7acab683-af3a-4069-8e39-e15fe5908aa4
+
+{
+    "name":"adam's restaurant",
+    "type":"bar",
+    "location":"sydney"
+}
+
+###
+GET http://localhost:5000/api/v1/restaurants HTTP/1.1
+Authorization: Bearer e59eee8e-12db-4f89-95fd-d41c832fee61
+
+###
+PUT http://localhost:5000/api/v1/restaurants/res_J5zCPBDeLP HTTP/1.1
+Authorization: Bearer 9b9f72cc-6087-416d-ba61-7843ca762b28
+
+{
+    "name":"yeet",
+    "type":"bar",
+    "location":"sydney"
+}
+
+###
+GET http://localhost:5000/api/v1/restaurants/res_J5zCPBDeLP/menu HTTP/1.1
+Authorization: d378a255-fabc-4632-8bb6-2c1bbe1ed755
+
+
+

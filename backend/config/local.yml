@@ -1,0 +1,6 @@
+db:
+  user: postgres
+  name: example
+  password: password
+  sslmode: disable
+  host: localhost

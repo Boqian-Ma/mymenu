@@ -1,0 +1,58 @@
+### 
+
+# Token : 5e50629e-d52d-44e7-952c-d346f2a15782
+# user id: usr_HP9OTKIYrM
+
+### Login 
+POST http://localhost:5000/api/v1/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "customer@example.com",
+    "password": "password"
+}
+
+
+### Create user
+POST http://localhost:5000/api/v1/register HTTP/1.1
+content-type: application/json
+
+{
+    "accountType": "customer",
+    "details": {
+        "email": "user1@example.com",
+        "name": "adam"
+    },
+    "password": "password"
+}
+### Place order -> success
+POST http://localhost:5000/api/v1/orders HTTP/1.1
+Authorization: Bearer 62e94f66-1511-4c87-8606-c222e5035578
+
+{
+    "restaurant_id": "res_C6lNdP8uZu",
+    "status": "ordered",
+    "total_cost": 10.99,
+    "items": {
+        "itm_fpbS1ThQQL": 3,
+        "itm_XL2zEJ1pYK" : 3
+    }
+}
+
+
+### View order as restaurant -> fail
+GET http://localhost:5000/api/v1/orders?res_id=res_DmP6PSebGv HTTP/1.1
+Authorization: Bearer 5e50629e-d52d-44e7-952c-d346f2a15782
+
+### View my order -> success
+GET http://localhost:5000/api/v1/orders?usr_id=usr_zyutoK4dUd HTTP/1.1
+Authorization: Bearer 5053c9ed-d297-478d-8260-ada21dcb4d9c
+
+
+### Update order -> failure
+
+
+### set order status -> failure
+
+POST http://localhost:5000/api/v1/orders/ord_vxXjMm7NRE/serve HTTP/1.1
+Authorization: Bearer 5e50629e-d52d-44e7-952c-d346f2a15782

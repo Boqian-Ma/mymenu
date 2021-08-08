@@ -1,0 +1,112 @@
+Week 1
+
+Had a Meeting with team to decide custom project idea. 
+Composed and emailed custom project request to tutor and lecturer. 
+Set up Project proposal template
+Set up Jira and Github classroom
+
+Week 2
+Discussed technology stack
+Set up Jira User Stories.
+Began writing epics and user stories on a word doc
+Will finish user stories by the end of the week
+
+Next week: Develop wireframes
+
+Week 3
+Monday:
+  1. Discussed and designed wireframes
+Tuesday: 
+  1. Refined user stories
+  2. Composed acceptance criteria
+Wednesday:
+  1. Finalised acceptance criteria
+  2. Wrote sections of proposal
+Thursday:
+  1. Refined wireframes
+  2. Composed interface flow diagrams
+
+Friday:
+  1. Input user stories to Jira
+  2. Used Canva to creat UI flow pages for proposal
+  3. Discussed about API set up with Andy and Jeremy
+
+Saturday:
+  1. Finalise Proposal 
+Sunday
+  1. Finalise Proposal and combine sections
+  2. Submit proposal
+
+Next week: Design Database and begin coding backend
+
+Week 4
+Wednesday:
+  1. Team meeting 
+Thursday:
+  1. Met with Andy to discuss backend workflow
+Friday:
+  1. menu_item SQL migration
+
+Week 5 
+Monday:
+  1. Menu Item API
+  2. Meeting about requirement change: registration process
+Tuesday:
+  1. Tested menu item API
+Sunday:
+  1. Morning stand up to discuss retrospective
+
+Next week: 
+1. Finalise and hand in retrospective
+2. Began coding Orders backend
+
+Week 6
+  Monday:
+  1. Redesigned landing pages and updated jira sprint 3
+  Friday:
+  1. Started ordering functionalities
+  2. Created database migration files and made boilplates 
+  Saturday:
+  1. Started on ordering business logic
+  SUndat:
+  1. Continuing on ordering business logic and api. 
+
+Next week: Continue coding and testing ordering
+
+Week 7:
+  Finalised coding ordering business logic and api.
+  Tested ordering api
+
+Next week:
+1. Prepare Demo B
+2. Create mock data in preparation for Demo
+
+Week 8:
+Monday:
+  1. Added order testing data
+Tuesday 
+  Prepare presentation
+Wednesday
+  presentation
+
+Next week:
+1. Write report
+2. Finalise technical stuff
+
+Week 9:
+Monday
+  Report
+Wednesday:
+  Prepare data for recommendation system
+Thursday
+  Prepare data for recommendation system
+Friday 
+  Finished and tested recommendation system
+  Allergy
+    Add allergy fielf to user
+    Decide which allergies to include
+    change migration menu_items file: add allergy fields
+    chaneg create item request, menuItem entity, 
+    change createItem, update item
+    Add new data to migration insert data
+    add new data to csv menu item

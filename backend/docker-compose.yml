@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  # This will host a local postgres version which can be accessible through
+  # localhost or 127.0.0.1
+
+  postgres:
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: example
+    image: "postgres:13.1"
+    ports:
+      - "5432:5432"

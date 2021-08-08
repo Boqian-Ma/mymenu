@@ -1,0 +1,37 @@
+
+### RES id: res_C6lNdP8uZu
+
+
+### Login 
+POST http://localhost:5000/api/v1/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "manager@example.com",
+    "password": "password"
+}
+
+### Create category
+POST http://localhost:5000/api/v1/restaurants/res_C6lNdP8uZu/categories HTTP/1.1
+Authorization: Bearer b10b073e-abe9-44e1-a466-afa3ce9385a9
+
+{
+    "name": "Drinks"
+}
+
+###
+POST http://localhost:5000/api/v1/restaurants/res_C6lNdP8uZu/menu_items HTTP/1.1
+Authorization: Bearer cbabf6ea-bd33-42f3-a677-a21cd5af9cc4
+
+{
+    "name": "Smoked eel",
+    "description": "green walnuts, Oscietra caviar sea cucumber crackling",
+    "is_menu": false,
+    "is_special": false,
+    "price": 10.00,
+    "category_id": "cat_Rtnp0C3aWs"
+}
+
+### 
+GET http://localhost:5000/api/v1/restaurants/res_C6lNdP8uZu/menu_items HTTP/1.1
+Authorization: Bearer 24c3aa63-6ba3-41a7-a809-c1314e069bf6

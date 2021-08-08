@@ -1,0 +1,84 @@
+###
+# Register user
+# register retaurant
+# view menu
+# add item
+# view menu
+# update menu
+# Delete menu
+POST http://localhost:5000/api/v1/register HTTP/1.1
+content-type: application/json
+
+{
+    "accountType": "manager",
+    "details": {
+        "email": "adam@ataylor.xyz",
+        "name": "adam"
+    },
+    "password": "password"
+}
+
+###
+
+POST http://localhost:5000/api/v1/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "adam@ataylor.xyz",
+    "password": "password"
+}
+###
+
+GET http://localhost:5000/api/v1/restaurants HTTP/1.1
+Authorization: Bearer 69318513-d94c-425a-831e-125ed798a40f
+
+###
+POST http://localhost:5000/api/v1/restaurants HTTP/1.1
+Authorization: 69318513-d94c-425a-831e-125ed798a40f
+
+{
+    "name":"adam's restaurant2",
+    "type":"bar",
+    "location":"sydney"
+}
+
+###
+GET http://localhost:5000/api/v1/restaurants/res_Y3vVnQK5Uf/menu_items HTTP/1.1
+Authorization: 9ab790af-bbc8-4527-b994-df15a9e34cfe
+
+### 
+POST http://localhost:5000/api/v1/restaurants/res_Y3vVnQK5Uf/menu_items HTTP/1.1
+Authorization: Bearer 9ab790af-bbc8-4527-b994-df15a9e34cfe
+
+{
+    "name": "food2",
+    "description": "yeetpioc",
+    "is_menu": false,
+    "is_special": false,
+    "price": 10.00,
+    "category": "breakfas"
+}
+
+
+### 
+GET http://localhost:5000/api/v1/restaurants/res_5PcVb5tUDh/menu_items HTTP/1.1
+Authorization: 711eedf3-e89b-4e05-a6cf-0f69e876e8f2
+
+
+### 
+PUT http://localhost:5000/api/v1/restaurants/res_5PcVb5tUDh/menu_items/itm_buKZdG04sA HTTP/1.1
+Authorization: Bearer 711eedf3-e89b-4e05-a6cf-0f69e876e8f2
+
+{
+    "name": "food2",
+    "description": "yeetpioc3",
+    "is_menu": false,
+    "is_special": false,
+    "price": 103.00,
+    "category": "breakfast3"
+}
+
+###
+DELETE http://localhost:5000/api/v1/restaurants/res_5PcVb5tUDh/menu_items/itm_3I2R7nxfI0 HTTP/1.1
+Authorization: Bearer 711eedf3-e89b-4e05-a6cf-0f69e876e8f2
+

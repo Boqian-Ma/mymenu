@@ -1,0 +1,19 @@
+﻿id,name,description,price,allergy,created_at,updated_at,is_special,is_menu,file,category_id,restaurant_id
+itm_0000000001,Soda and sultana bread,Crunchy bread made with soda and sultana,19,,2021-07-19 11:38:06.653135,2021-07-19 11:38:06.653136,f,t,0.jpg,cat_0000000001,res_C6lNdP8uZ1
+itm_0000000002,Chili powder salad with garlic dressing,A mouth-watering potato salad served with cinnamon dressing,25,,2021-07-19 11:38:06.653135,2021-07-19 11:38:06.653136,f,t,1.jpg,cat_0000000002,res_C6lNdP8uZ2
+itm_0000000003,Potato and egg vindaloo,Spicy vindaloo made with new potato and free range eggs,20,,2021-07-19 11:38:06.653135,2021-07-19 11:38:06.653136,f,t,2.jpg,cat_0000000003,res_C6lNdP8uZ3
+itm_0000000004,Potato and onion bread,Crunchy bread made with baby new potato and baby onion,19,,2021-07-19 11:38:06.653135,2021-07-19 11:38:06.653136,f,t,3.jpg,cat_0000000004,res_C6lNdP8uZ4
+itm_0000000005,Amchoor and pork vindaloo,Hot vindaloo made with amchoor and pork,25,,2021-07-19 11:38:06.653135,2021-07-19 11:38:06.653136,f,t,4.jpg,cat_0000000005,res_C6lNdP8uZ5
+itm_0000000006,Banana and rambutan vindaloo,Hot vindaloo made with fresh banana and rambutan,20,,2021-07-19 11:38:06.653135,2021-07-19 11:38:06.653136,f,t,5.jpg,cat_0000000006,res_C6lNdP8uZ6
+itm_0000000007,Potato and fennel soup,New potato and fresh fennel combined into creamy soup,19,,2021-07-19 11:38:06.653135,2021-07-19 11:38:06.653136,f,t,6.jpg,cat_0000000007,res_C6lNdP8uZ7
+itm_0000000008,Tofu and chicken vindaloo,Hot vindaloo made with smoked tofu and free range chicken,25,,2021-07-19 11:38:06.653135,2021-07-19 11:38:06.653136,f,t,7.jpg,cat_0000000008,res_C6lNdP8uZ8
+itm_0000000009,Aubergine and tumeric vindaloo,Spicy vindaloo made with salted aubergine and tumeric,20,,2021-07-19 11:38:06.653135,2021-07-19 11:38:06.653136,f,t,8.jpg,cat_0000000009,res_C6lNdP8uZ9
+itm_0000000010,Mustard seed and cod vindaloo,Spicy vindaloo made with black mustard seeds and pacific cod,19,,2021-07-19 11:38:06.653135,2021-07-19 11:38:06.653136,f,t,9.jpg,cat_0000000010,res_C6lNdP8ua0
+itm_0000000011,Potato and barley stew,Fresh potato and barley stewed,25,,2021-07-19 11:38:06.653135,2021-07-19 11:38:06.653136,f,t,10.jpg,cat_0000000011,res_C6lNdP8ua1
+itm_0000000012,Duck and black pepper vindaloo,Hot vindaloo made with duck and hot black pepper,20,,2021-07-19 11:38:06.653135,2021-07-19 11:38:06.653136,f,t,11.jpg,cat_0000000012,res_C6lNdP8ua2
+itm_0000000013,Pepper and squash vindaloo,Spicy vindaloo made with roasted pepper and acorn squash,19,,2021-07-19 11:38:06.653135,2021-07-19 11:38:06.653136,f,t,12.jpg,cat_0000000013,res_C6lNdP8ua3
+itm_0000000014,Navratan and mango vindaloo,Spicy vindaloo made with navratan and fresh mango,25,,2021-07-19 11:38:06.653135,2021-07-19 11:38:06.653136,f,t,13.jpg,cat_0000000014,res_C6lNdP8ua4
+itm_0000000015,Peanut and asafoetida vindaloo,Hot vindaloo made with peanut and asafoetida,20,,2021-07-19 11:38:06.653135,2021-07-19 11:38:06.653136,f,t,14.jpg,cat_0000000015,res_C6lNdP8ua5
+itm_0000000016,Potato and beetroot gnocchi,Gnocchi served in a sauce made from new potato and fresh beetroot,19,,2021-07-19 11:38:06.653135,2021-07-19 11:38:06.653136,f,t,16.jpg,cat_0000000016,res_C6lNdP8ua6
+itm_0000000017,Chard and coconut vindaloo,Spicy vindaloo made with fresh chard and coconut,25,,2021-07-19 11:38:06.653135,2021-07-19 11:38:06.653136,f,t,16.jpg,cat_0000000017,res_C6lNdP8ua7
+itm_0000000018,Potato and mangetout kebab,Skewer-cooked fresh potato and mangetout served in warm pitta pockets,20,,2021-07-19 11:38:06.653135,2021-07-19 11:38:06.653136,f,t,17.jpg,cat_0000000018,res_C6lNdP8ua8

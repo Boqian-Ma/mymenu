@@ -1,0 +1,50 @@
+z5267168 -  Ryan McGrory
+
+Week1
+  - Setup Jira and provisioned accounts to access
+  - Unable to attend weekly sunday meeting or tutorial this week
+
+Week2
+  - In tutorial discussed work for proposal document - divided work amongst team members
+  - I aim to complete the problem statement for the proposal and assist with system flow documentation (ui with figma)
+  - Will discuss due date for minimum viable proposal to allow for the beginning of development work
+  - Will also discuss setup for software architecture during weekly meeting :)
+
+Week3
+  - Analyse similar platforms for problem domain - Square Restaurants, Zomato and Me&u
+  - Draw conclusions abouts what they did well and what they didnt
+  - Document and add to proposal these findings and how features we should implement as a result
+  - Plan for sprint before demo
+  
+Week4
+  - Integrate backend and frontend together, working on authentication and user auth management
+  - Build out frontend services capability
+  - Meetup with team to discuss what is aimed to be completed before Demo1
+
+Week5
+  - Fix any problems with authentication between frontend and backend
+  - Work on building frontend page for settings (user and restaurant management) (and integrating with backend)
+  - Finalise details before first demo, ensure features we have working are working as expected
+  
+Week6
+  - Working on styling changes to home page
+  - Created a logo for the myMenu business to improve eye candy
+  - Starting implementing QR Code for manager
+  
+Week7
+  - Finished creating QR code for manager
+  - Working on QR Code flow from customer perspective, landing page and redirects
+  - Will add features to restaurant menu & ordering
+  
+Week 8
+  - Completed workflow of qrcode with full implementation in seperate branch, requires backend to implement guest login
+  - continued work on design of landing page
+  
+Week 9
+  - After blocked by backend for guest login endpoint, completed qr code
+  - Worked on frontpage style and design
+  - Implemented unauthorised page and fixed navbar showing on screens that is shouldn't show on
+  
+  
+  
+  

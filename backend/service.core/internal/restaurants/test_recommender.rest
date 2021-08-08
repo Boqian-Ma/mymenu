@@ -1,0 +1,39 @@
+
+### Login Customer
+### Get recommendation (check point 1)
+### Place order
+
+
+
+### Complete order
+
+### 
+
+### Login 
+POST http://localhost:5000/api/v1/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "customer@example.com",
+    "password": "password"
+}
+
+### Get recommendation
+GET http://localhost:5000/api/v1/recommended-restaurants HTTP/1.1
+Authorization: Bearer e381baf4-be6e-4ffa-b865-efe70eeadbe2
+
+### Place an order of south ameriacn
+POST http://localhost:5000/api/v1/orders HTTP/1.1
+Authorization: Bearer e381baf4-be6e-4ffa-b865-efe70eeadbe2
+
+{
+    "restaurant_id": "res_C6lNdP8ua2",
+    "status": "ordered",
+    "total_cost": 10.99,
+    "table_num": 1,
+    "items": {
+        "itm_0000000012": 1
+    }
+}
+
+### Go to front end to change order status

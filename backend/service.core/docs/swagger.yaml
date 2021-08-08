@@ -1,0 +1,1726 @@
+basePath: /api/v1
+definitions:
+  categories.ItemResponse:
+    properties:
+      item:
+        $ref: '#/definitions/entity.MenuItemCategory'
+        type: object
+    type: object
+  categories.ListResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/entity.MenuItemCategory'
+        type: array
+    type: object
+  entity.HomePageReport:
+    properties:
+      all_time:
+        $ref: '#/definitions/entity.HomePageReportItem'
+        type: object
+      daily:
+        $ref: '#/definitions/entity.HomePageReportItem'
+        type: object
+      generated_at:
+        type: string
+      monthly:
+        $ref: '#/definitions/entity.HomePageReportItem'
+        type: object
+      quarterly:
+        $ref: '#/definitions/entity.HomePageReportItem'
+        type: object
+      weekly:
+        $ref: '#/definitions/entity.HomePageReportItem'
+        type: object
+      yearly:
+        $ref: '#/definitions/entity.HomePageReportItem'
+        type: object
+    type: object
+  entity.HomePageReportItem:
+    properties:
+      most_ordered_category:
+        $ref: '#/definitions/entity.MenuItemCategory'
+        type: object
+      most_ordered_item:
+        $ref: '#/definitions/entity.MenuItem'
+        type: object
+      most_ordered_item_quantity:
+        type: integer
+      total_revenue:
+        type: number
+    type: object
+  entity.MenuItem:
+    properties:
+      allergy:
+        type: string
+      category_id:
+        type: string
+      description:
+        type: string
+      file:
+        type: string
+      id:
+        type: string
+      is_menu:
+        type: boolean
+      is_special:
+        type: boolean
+      name:
+        type: string
+      price:
+        type: number
+    type: object
+  entity.MenuItemCategory:
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+    type: object
+  entity.MenuItemResult:
+    properties:
+      allergy:
+        type: string
+      category_id:
+        type: string
+      category_name:
+        type: string
+      description:
+        type: string
+      file:
+        type: string
+      id:
+        type: string
+      is_menu:
+        type: boolean
+      is_special:
+        type: boolean
+      name:
+        type: string
+      price:
+        type: number
+    type: object
+  entity.Order:
+    properties:
+      id:
+        type: string
+      items:
+        items:
+          $ref: '#/definitions/entity.OrderItem'
+        type: array
+      restaurant_id:
+        type: string
+      status:
+        type: string
+      table_num:
+        type: integer
+      total_cost:
+        type: number
+      user_id:
+        type: string
+    type: object
+  entity.OrderItem:
+    properties:
+      item_id:
+        type: string
+      quantity:
+        type: integer
+    type: object
+  entity.OrderItemResult:
+    properties:
+      item_id:
+        type: string
+      item_name:
+        type: string
+      item_price:
+        type: integer
+      quantity:
+        type: integer
+    type: object
+  entity.OrderResult:
+    properties:
+      id:
+        type: string
+      items:
+        items:
+          $ref: '#/definitions/entity.OrderItemResult'
+        type: array
+      restaurant_id:
+        type: string
+      status:
+        type: string
+      table_num:
+        type: integer
+      total_cost:
+        type: number
+      user_id:
+        type: string
+    type: object
+  entity.Restaurant:
+    properties:
+      businessHours:
+        type: string
+      cuisine:
+        type: string
+      email:
+        type: string
+      file:
+        type: string
+      id:
+        example: res_abc123d
+        type: string
+      location:
+        type: string
+      name:
+        type: string
+      phone:
+        type: string
+      type:
+        type: string
+      website:
+        type: string
+    type: object
+  entity.Table:
+    properties:
+      num_seats:
+        type: integer
+      restaurant_id:
+        type: string
+      status:
+        type: string
+      table_num:
+        type: integer
+    type: object
+  entity.User:
+    properties:
+      accountType:
+        type: string
+      details:
+        $ref: '#/definitions/entity.UserDetails'
+        type: object
+      id:
+        example: usr_abc123d
+        type: string
+    type: object
+  entity.UserDetails:
+    properties:
+      allergy:
+        type: string
+      email:
+        type: string
+      name:
+        type: string
+    type: object
+  errors.ErrorResponse:
+    properties:
+      message:
+        example: error message
+        type: string
+    type: object
+  menu_items.CreateMenuItemRequest:
+    properties:
+      allergy:
+        type: string
+      category_id:
+        type: string
+      description:
+        type: string
+      file:
+        type: string
+      is_menu:
+        type: boolean
+      is_special:
+        type: boolean
+      name:
+        type: string
+      price:
+        type: number
+    type: object
+  menu_items.GetItemResponse:
+    properties:
+      item:
+        $ref: '#/definitions/entity.MenuItemResult'
+        type: object
+    type: object
+  menu_items.GetListResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/entity.MenuItemResult'
+        type: array
+    type: object
+  menu_items.ItemResponse:
+    properties:
+      item:
+        $ref: '#/definitions/entity.MenuItem'
+        type: object
+    type: object
+  menu_items.UpdateMenuItemRequest:
+    $ref: '#/definitions/menu_items.CreateMenuItemRequest'
+  orders.CreateOrderItemRequest:
+    properties:
+      item_id:
+        type: string
+      order_id:
+        type: string
+      quantity:
+        type: integer
+      restaurant_id:
+        type: string
+    type: object
+  orders.CreateOrderRequest:
+    properties:
+      items:
+        additionalProperties:
+          type: integer
+        type: object
+      restaurant_id:
+        type: string
+      table_num:
+        type: integer
+    type: object
+  orders.GetItemResponse:
+    properties:
+      item:
+        $ref: '#/definitions/entity.OrderResult'
+        type: object
+    type: object
+  orders.GetListResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/entity.OrderResult'
+        type: array
+    type: object
+  orders.ItemResponse:
+    properties:
+      item:
+        $ref: '#/definitions/entity.Order'
+        type: object
+    type: object
+  orders.MoveOrderRequest:
+    properties:
+      new_table_number:
+        type: integer
+      restaurant_id:
+        type: string
+    type: object
+  orders.OrderItemResponse:
+    properties:
+      item:
+        $ref: '#/definitions/entity.OrderItem'
+        type: object
+    type: object
+  orders.UpdateOrderItemRequest:
+    $ref: '#/definitions/orders.CreateOrderItemRequest'
+  orders.UpdateOrderRequest:
+    properties:
+      items:
+        additionalProperties:
+          type: integer
+        type: object
+      restaurant_id:
+        type: string
+      status:
+        type: string
+      table_num:
+        type: integer
+    type: object
+  restaurants.CreateRestaurantRequest:
+    properties:
+      businessHours:
+        type: string
+      cuisine:
+        type: string
+      email:
+        type: string
+      file:
+        type: string
+      location:
+        type: string
+      name:
+        type: string
+      phone:
+        type: string
+      type:
+        type: string
+      website:
+        type: string
+    type: object
+  restaurants.ItemResponse:
+    properties:
+      item:
+        $ref: '#/definitions/entity.Restaurant'
+        type: object
+    type: object
+  restaurants.ListResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/entity.Restaurant'
+        type: array
+    type: object
+  restaurants.UpdateRestaurantRequest:
+    $ref: '#/definitions/restaurants.CreateRestaurantRequest'
+  tables.CreateTableRequest:
+    properties:
+      num_seats:
+        type: integer
+      table_num:
+        type: integer
+    type: object
+  tables.ItemResponse:
+    properties:
+      item:
+        $ref: '#/definitions/entity.Table'
+        type: object
+    type: object
+  tables.UpdateTableRequest:
+    properties:
+      num_seats:
+        type: integer
+      status:
+        type: string
+    type: object
+  users.LoginRequest:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+    type: object
+  users.RegisterUserRequest:
+    properties:
+      accountType:
+        type: string
+      details:
+        $ref: '#/definitions/users.UpdateUserDetailsRequest'
+        type: object
+      password:
+        type: string
+    type: object
+  users.ResetPasswordRequest:
+    properties:
+      email:
+        type: string
+      newPassword:
+        type: string
+    type: object
+  users.TokenResponse:
+    properties:
+      token:
+        type: string
+    type: object
+  users.UpdateUserDetailsRequest:
+    properties:
+      allergy:
+        type: string
+      email:
+        type: string
+      name:
+        type: string
+    type: object
+host: localhost:5000
+info:
+  contact: {}
+  description: Restaurants and customers and other great things!
+  license: {}
+  title: COMP3900 - JAMAR
+  version: "0.1"
+paths:
+  /login:
+    post:
+      parameters:
+      - description: The user's login details
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/users.LoginRequest'
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/users.TokenResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "409":
+          description: Duplicate Account
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: We all know what /login does
+      tags:
+      - Users
+  /login/guest:
+    post:
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/users.TokenResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "409":
+          description: Duplicate Account
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: We all know what /login does, this does that for a guest
+      tags:
+      - Users
+  /logout:
+    post:
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "409":
+          description: Duplicate Account
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Logs out the current user and invalidates the session token
+      tags:
+      - Users
+  /order:
+    get:
+      parameters:
+      - description: If supplied by user, only return orders made by this table
+        in: query
+        name: res_id
+        required: true
+        type: string
+      - description: If supplied by user, only return orders made by this specific user
+        in: query
+        name: table_num
+        required: true
+        type: string
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/orders.GetItemResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Gets a list of orders depending on the query parameters
+      tags:
+      - Orders
+  /orders:
+    get:
+      parameters:
+      - description: If supplied by user, only return orders made by this restaurant
+        in: query
+        name: res_id
+        type: string
+      - description: If supplied by user, only return orders made by this specific user
+        in: query
+        name: usr_id
+        type: string
+      - description: If supplied, return a list of order based on the status code. Should only be used by restaurant
+        in: query
+        name: status
+        type: string
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/orders.GetListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Gets a list of orders depending on the query parameters
+      tags:
+      - Orders
+    post:
+      parameters:
+      - description: The new order's details
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/orders.CreateOrderRequest'
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/orders.ItemResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Creates a order. Used by both customer and users
+      tags:
+      - Orders
+  /orders/{ord_id}:
+    post:
+      parameters:
+      - description: The id of the order
+        in: path
+        name: ord_id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/orders.OrderItemResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Creates a new order item in an order
+      tags:
+      - Orders
+    put:
+      parameters:
+      - description: The id of the order
+        in: path
+        name: ord_id
+        required: true
+        type: string
+      - description: The order item's details
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/orders.UpdateOrderItemRequest'
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/orders.OrderItemResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Updates an order item in an order.
+      tags:
+      - Orders
+  /orders/{ord_id}/cancel:
+    post:
+      parameters:
+      - description: The id of the order
+        in: path
+        name: ord_id
+        required: true
+        type: string
+      - description: The order's updated details
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/orders.UpdateOrderRequest'
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/orders.ItemResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Sets an order status to "canceled"
+      tags:
+      - Orders
+  /orders/{ord_id}/complete:
+    post:
+      parameters:
+      - description: The id of the order
+        in: path
+        name: ord_id
+        required: true
+        type: string
+      - description: The order's updated details
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/orders.UpdateOrderRequest'
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/orders.ItemResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Sets an order status to "completed"
+      tags:
+      - Orders
+  /orders/{ord_id}/cook:
+    post:
+      parameters:
+      - description: The id of the order
+        in: path
+        name: ord_id
+        required: true
+        type: string
+      - description: The order's updated details
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/orders.UpdateOrderRequest'
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/orders.ItemResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Sets an order status to "served"
+      tags:
+      - Orders
+  /orders/{ord_id}/items/{itm_id}:
+    delete:
+      parameters:
+      - description: The id of the order
+        in: path
+        name: ord_id
+        required: true
+        type: string
+      - description: The id of the item in the order
+        in: path
+        name: itm_id
+        required: true
+        type: string
+      - description: The order item's details
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/orders.UpdateOrderItemRequest'
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/orders.ItemResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Deletes an order item from an order
+      tags:
+      - Orders
+  /orders/{ord_id}/move:
+    put:
+      parameters:
+      - description: Move an order to different table
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/orders.MoveOrderRequest'
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/orders.ItemResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Updates an order
+      tags:
+      - Orders
+  /recommended-restaurants:
+    get:
+      description: By default returns all restaurants recommended based on this user's previous order history. For detailed explaination, please read our software report
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/restaurants.ListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Returns a list of restaurants, recommended for this specific user
+      tags:
+      - Restaurants
+  /register:
+    post:
+      parameters:
+      - description: The new user's details
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/users.RegisterUserRequest'
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/users.TokenResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "409":
+          description: Duplicate Account
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Used to register a new user account
+      tags:
+      - Users
+  /reset:
+    put:
+      parameters:
+      - description: The new user's details
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/users.ResetPasswordRequest'
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/entity.User'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "409":
+          description: Duplicate Account
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Used to update the password of a user
+      tags:
+      - Users
+  /restaurants:
+    get:
+      description: By default returns all restaurants in the system but managers can use the `mine=true` query param to only return restaurants they manage
+      parameters:
+      - description: If it's true, only return restaurants managed by the user
+        in: query
+        name: mine
+        type: boolean
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/restaurants.ListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Returns a list of restaurants
+      tags:
+      - Restaurants
+    post:
+      parameters:
+      - description: The new restaurant's details
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/restaurants.CreateRestaurantRequest'
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/restaurants.ItemResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Creates a new restaurant attached to the user's account
+      tags:
+      - Restaurants
+  /restaurants/{res_id}:
+    get:
+      parameters:
+      - description: The id of the restaurant
+        in: path
+        name: res_id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/entity.Restaurant'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Returns the details for the specified restaurant
+      tags:
+      - Restaurants
+    put:
+      parameters:
+      - description: The id of the restaurant
+        in: path
+        name: res_id
+        required: true
+        type: string
+      - description: The restaurant's updated details
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/restaurants.UpdateRestaurantRequest'
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/entity.Restaurant'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Updates a restaurant's details
+      tags:
+      - Restaurants
+  /restaurants/{res_id}/categories:
+    get:
+      parameters:
+      - description: The id of the restaurant
+        in: path
+        name: res_id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/categories.ListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Gets all menu item categories associated to a restaurant
+      tags:
+      - MenuItems
+    post:
+      parameters:
+      - description: The id of the restaurant
+        in: path
+        name: res_id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/categories.ItemResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Creates a new menu item category for a restaurant
+      tags:
+      - MenuItems
+  /restaurants/{res_id}/categories/{cat_id}:
+    get:
+      parameters:
+      - description: The id of the restaurant
+        in: path
+        name: res_id
+        required: true
+        type: string
+      - description: The id of the category
+        in: path
+        name: cat_id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/categories.ItemResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Returns a category from an id
+      tags:
+      - MenuItems
+  /restaurants/{res_id}/menu:
+    get:
+      description: Returns this restaurant's current displayed menu. It is used by customers only
+      parameters:
+      - description: The id of the restaurant
+        in: path
+        name: res_id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/menu_items.GetListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Gets a restaurant's current visiable menu items
+      tags:
+      - MenuItems
+  /restaurants/{res_id}/menu_items:
+    get:
+      parameters:
+      - description: The id of the restaurant
+        in: path
+        name: res_id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/menu_items.GetListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Gets all menu items associated to a restaurant
+      tags:
+      - MenuItems
+    post:
+      parameters:
+      - description: The id of the restaurant
+        in: path
+        name: res_id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/menu_items.ItemResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Creates a new menu item for a restaurant
+      tags:
+      - MenuItems
+  /restaurants/{res_id}/menu_items/{itm_id}:
+    get:
+      parameters:
+      - description: The id of the restaurant
+        in: path
+        name: res_id
+        required: true
+        type: string
+      - description: The id of the item
+        in: path
+        name: itm_id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/menu_items.GetItemResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Get a menu item's details
+      tags:
+      - MenuItems
+    put:
+      parameters:
+      - description: The id of the restaurant
+        in: path
+        name: res_id
+        required: true
+        type: string
+      - description: The id of the item
+        in: path
+        name: itm_id
+        required: true
+        type: string
+      - description: The menu_item's updated details
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/menu_items.UpdateMenuItemRequest'
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/menu_items.ItemResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Updates a menu item for a restaurant
+      tags:
+      - MenuItems
+  /restaurants/{res_id}/report:
+    get:
+      parameters:
+      - description: The id of the restaurant
+        in: path
+        name: res_id
+        required: true
+        type: string
+      - description: type of report
+        in: query
+        name: type
+        required: true
+        type: string
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/entity.HomePageReport'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Returns the details for the specified restaurant. Currently only support "home" as a type.
+      tags:
+      - Restaurants
+  /restaurants/{res_id}/tables:
+    get:
+      parameters:
+      - description: The id of the restaurant
+        in: path
+        name: res_id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/tables.ItemResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Gets all tables associated to a restaurant
+      tags:
+      - Tables
+    post:
+      parameters:
+      - description: The id of the restaurant
+        in: path
+        name: res_id
+        required: true
+        type: string
+      - description: The table's details
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/tables.CreateTableRequest'
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/tables.ItemResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Creates a new table for a restaurant
+      tags:
+      - Tables
+  /restaurants/{res_id}/tables/{tbl_num}:
+    get:
+      parameters:
+      - description: The id of the restaurant
+        in: path
+        name: res_id
+        required: true
+        type: string
+      - description: The id of the table
+        in: path
+        name: tbl_num
+        required: true
+        type: string
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/tables.ItemResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Get a table's details
+      tags:
+      - Tables
+    put:
+      parameters:
+      - description: The id of the restaurant
+        in: path
+        name: res_id
+        required: true
+        type: string
+      - description: The id of the table
+        in: path
+        name: tbl_num
+        required: true
+        type: string
+      - description: The table's updated details
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/tables.UpdateTableRequest'
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/tables.ItemResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Updates a table for a restaurant
+      tags:
+      - Tables
+  /restaurants/{res_id}/tables/{tbl_num}/free:
+    post:
+      parameters:
+      - description: The id of the restaurant
+        in: path
+        name: res_id
+        required: true
+        type: string
+      - description: The id of the table
+        in: path
+        name: tbl_num
+        required: true
+        type: string
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/tables.ItemResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Frees a table
+      tags:
+      - Tables
+  /restaurants/{res_id}/tables/{tbl_num}/occupy:
+    post:
+      parameters:
+      - description: The id of the restaurant
+        in: path
+        name: res_id
+        required: true
+        type: string
+      - description: The id of the table
+        in: path
+        name: tbl_num
+        required: true
+        type: string
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/tables.ItemResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Occupies a table
+      tags:
+      - Tables
+  /users/{id}:
+    get:
+      parameters:
+      - description: The id of the user, or current for the currently authenticated user
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/entity.User'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Returns the details for the specified user
+      tags:
+      - Users
+    put:
+      parameters:
+      - description: The id of the user, or current for the currently authenticated user
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: success
+          schema:
+            $ref: '#/definitions/entity.User'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.ErrorResponse'
+      summary: Updates a user's details
+      tags:
+      - Users
+swagger: "2.0"

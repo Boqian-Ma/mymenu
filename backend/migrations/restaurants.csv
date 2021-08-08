@@ -1,0 +1,19 @@
+id,created_at,updated_at,name,type,cuisine,location,email ,phone,website,business_hours,file
+res_C6lNdP8uZ1,2021-07-19 11:38:06.653134,2021-07-19 11:38:06.653135,Finest Dining,Diner,Asian,Sydney,fine@gmail.com,95574217,www.fine.com.au,Monday-Sunday,19.jpg
+res_C6lNdP8uZ2,2021-07-19 11:38:06.653134,2021-07-19 11:38:06.653135,Dinner Club,Bar,European,Sydney,dinner@club.com,95574218,www.dinerclub.com,Monday-Sunday,20.jpg
+res_C6lNdP8uZ3,2021-07-19 11:38:06.653134,2021-07-19 11:38:06.653135,Harvest Beat Restaurant,Diner,Indian,Sydney,harvest@beat.com,95574219,www.harvestbeat.com,Monday-Sunday,hbr.jpg
+res_C6lNdP8uZ4,2021-07-19 11:38:06.653134,2021-07-19 11:38:06.653135,Hot & Crusty,Bar,Mediterranean,Sydney,hot@crusty.com,95574220,www.hc.com,Monday-Sunday,22.jpg
+res_C6lNdP8uZ5,2021-07-19 11:38:06.653134,2021-07-19 11:38:06.653135,King and Queen,Diner,North American,Sydney,king@queen.com,95574221,www.kingqueen.com,Monday-Sunday,23.jpg
+res_C6lNdP8uZ6,2021-07-19 11:38:06.653134,2021-07-19 11:38:06.653135,Dine Dime,Bar,South American,Sydney,dine@dime.com,95574222,www.dd.com,Monday-Sunday,24.jpg
+res_C6lNdP8uZ7,2021-07-19 11:38:06.653134,2021-07-19 11:38:06.653135,On the Dime Dining,Diner,Asian,Sydney,onethedime@gmail.com,95574223,www.otd.com,Monday-Sunday,25.jpg
+res_C6lNdP8uZ8,2021-07-19 11:38:06.653134,2021-07-19 11:38:06.653135,The Red Door,Bar,European,Sydney,door@office.com,95574224,www.red.com,Monday-Sunday,26.jpg
+res_C6lNdP8uZ9,2021-07-19 11:38:06.653134,2021-07-19 11:38:06.653135,Water bar Restaurant,Diner,Indian,Sydney,waterbar@sydnet.com,95574225,www.watbar.com,Monday-Sunday,27.jpg
+res_C6lNdP8ua0,2021-07-19 11:38:06.653134,2021-07-19 11:38:06.653135,Tower 23 Hotel,Bar,Mediterranean,Sydney,tower@gmail.com,95574226,www.tw23.conm,Monday-Sunday,28.jpg
+res_C6lNdP8ua1,2021-07-19 11:38:06.653134,2021-07-19 11:38:06.653135,Foxsister,Diner,North American,Sydney,fox@sister.com,95574227,www.foxisiter.com,Monday-Sunday,29.jpg
+res_C6lNdP8ua2,2021-07-19 11:38:06.653134,2021-07-19 11:38:06.653135,Golden Era,Bar,South American,Sydney,golden@era.com,95574228,www.goldenera.com,Monday-Sunday,13.jpg
+res_C6lNdP8ua3,2021-07-19 11:38:06.653134,2021-07-19 11:38:06.653135,Halls Chophouse,Diner,Asian,Sydney,office@halls.com,95574229,Halls.com,Monday-Sunday,31.jpg
+res_C6lNdP8ua4,2021-07-19 11:38:06.653134,2021-07-19 11:38:06.653135,Heirloom Café,Bar,European,Sydney,heirllom@gmail.com,95574230,www.heirloom.com,Monday-Sunday,32.jpg
+res_C6lNdP8ua5,2021-07-19 11:38:06.653134,2021-07-19 11:38:06.653135,Townsend,Diner,Indian,Sydney,townsend@gmail.com,95574231,www.townsend.com,Monday-Sunday,33.jpg
+res_C6lNdP8ua6,2021-07-19 11:38:06.653134,2021-07-19 11:38:06.653135,Upland,Bar,Mediterranean,Sydney,upland@gmail.com,95574232,www.upland.com,Monday-Sunday,34.jpg
+res_C6lNdP8ua7,2021-07-19 11:38:06.653134,2021-07-19 11:38:06.653135,Urban Remedy,Diner,North American,Sydney,urban@remedy.com,95574233,www.urbanremedy.com,Monday-Sunday,35.jpg
+res_C6lNdP8ua8,2021-07-19 11:38:06.653134,2021-07-19 11:38:06.653135,Zero Restaurant,Bar,South American,Sydney,zoe@zhang.com,95574234,www.zero.com,Monday-Sunday,36.jpg

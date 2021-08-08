@@ -1,0 +1,22 @@
+### Login
+### Get report
+
+# Token 829c51cf-335f-4d04-8726-8bf2c7964d83
+# Res id res_C6lNdP8uZa
+
+### Login 
+POST http://localhost:5000/api/v1/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "manager@example.com",
+    "password": "password"
+}
+
+### GET all restaurants
+GET http://localhost:5000/api/v1/restaurants HTTP/1.1
+Authorization:  Bearer baa9b159-a3f9-43d7-96c8-fc55c73bdcec
+
+### Get hompage report
+GET http://localhost:5000/api/v1/restaurants/res_C6lNdP8uZu/report?type=home HTTP/1.1
+Authorization:  Bearer 46cc0e03-f25c-4801-b5f8-54f6ebe3f430

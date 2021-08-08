@@ -1,0 +1,119 @@
+###
+# Register user
+# register retaurant
+# view menu
+# add item
+# view menu
+# update menu
+# Delete menu
+
+INSERT INTO USERS ('usr_GWc7JuwWCd', '2021-07-19 11:00:38.635435', "2021-07-19 11:00:38.635435", 'manager', 'manager@example.com', 'manager1', 'cf54e9d9da8e2a41d2ab21b7364045ce27b4e5ceaf29bc61f4fb96d5198ca7f7', '4496aeb3-e635-4c21-92ea-ac79e520a407');
+
+### user id usr_H7cQpk4mlh
+### res id  res_DmP6PSebGv
+### Category id cat_UrYf6fMp7L
+### Item id itm_fpbS1ThQQL
+### order id
+
+### Token 7acab683-af3a-4069-8e39-e15fe5908aa4
+
+
+### Create user
+POST http://localhost:5000/api/v1/register HTTP/1.1
+content-type: application/json
+
+{
+    "accountType": "customer",
+    "details": {
+        "email": "customer@example.com",
+        "name": "customer1"
+    },
+    "password": "password"
+}
+
+### Login 
+POST http://localhost:5000/api/v1/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "manager@example.com",
+    "password": "password"
+}
+
+### Create restaurant
+POST http://localhost:5000/api/v1/restaurants HTTP/1.1
+Authorization: Bearer 7acab683-af3a-4069-8e39-e15fe5908aa4
+
+{
+    "name":"Quay",
+    "type":"bar",
+    "location":"sydney",
+    "email": "booking@quay.com.au",
+    "phone": "02 9251 5600",
+    "website": "www.quay.com.au",
+    "business_hours": "",
+    "file": "yeet"
+}
+
+### Get restaurants
+GET http://localhost:5000/api/v1/restaurants HTTP/1.1
+Authorization: Bearer 7cbd15ce-d37e-4c7e-94a4-1e5e4f311cd8
+
+### Create menu item category
+### Change res id
+
+POST http://localhost:5000/api/v1/restaurants/res_DmP6PSebGv/categories HTTP/1.1
+Authorization: Bearer 4ded6c4d-7fda-4bc2-ad35-0d349e58cc1b
+
+{
+    "name" : "category1"
+}
+
+
+### Create item
+POST http://localhost:5000/api/v1/restaurants/res_DmP6PSebGv/menu_items HTTP/1.1
+Authorization: Bearer 4ded6c4d-7fda-4bc2-ad35-0d349e58cc1b
+
+{
+    "name": "food2",
+    "description": "yeet1",
+    "is_menu": false,
+    "is_special": false,
+    "price": 103.00,
+    "category_id": "cat_UrYf6fMp7L"
+}
+
+### Get items 
+GET http://localhost:5000/api/v1/restaurants/res_Y3vVnQK5Uf/menu_items HTTP/1.1
+Authorization: Bearer 
+
+### Create menu item
+### Change res id, user id, and item id
+POST http://localhost:5000/api/v1/orders HTTP/1.1
+Authorization: Bearer 4ded6c4d-7fda-4bc2-ad35-0d349e58cc1b
+
+{
+    "restaurant_id": "res_DmP6PSebGv",
+    "user_id": "usr_H7cQpk4mlh",
+    "status": "ordered",
+    "total_cost": 10.99,
+    "items": {
+        "itm_fpbS1ThQQL": 1
+    }
+}
+
+
+
+### restaurant get orders
+GET http://localhost:5000/api/v1/orders?res_id=res_DmP6PSebGv HTTP/1.1
+Authorization: Bearer 7cbd15ce-d37e-4c7e-94a4-1e5e4f311cd8
+
+
+### restaurant get orders with status 
+GET http://localhost:5000/api/v1/orders?res_id=res_DmP6PSebGv&status=completed HTTP/1.1
+Authorization: Bearer 7cbd15ce-d37e-4c7e-94a4-1e5e4f311cd8
+
+### Get order
+DELETE http://localhost:5000/api/v1/restaurants/res_5PcVb5tUDh/menu_items/itm_3I2R7nxfI0 HTTP/1.1
+Authorization: Bearer 711eedf3-e89b-4e05-a6cf-0f69e876e8f2
+

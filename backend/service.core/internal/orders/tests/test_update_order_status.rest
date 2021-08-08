@@ -1,0 +1,22 @@
+
+### Get restaurant orders
+
+# Token:
+# res id: 7cbd15ce-d37e-4c7e-94a4-1e5e4f311cd8
+
+### restaurant get orders
+GET http://localhost:5000/api/v1/orders?res_id=res_DmP6PSebGv HTTP/1.1
+Authorization: Bearer 7cbd15ce-d37e-4c7e-94a4-1e5e4f311cd8
+
+### Serve order
+POST http://localhost:5000/api/v1/orders/ord_vxXjMm7NRE/serve HTTP/1.1
+Authorization: Bearer 7cbd15ce-d37e-4c7e-94a4-1e5e4f311cd8
+
+
+### Complete order
+POST http://localhost:5000/api/v1/orders/ord_vxXjMm7NRE/complete HTTP/1.1
+Authorization: Bearer 7cbd15ce-d37e-4c7e-94a4-1e5e4f311cd8
+
+### Cancel order
+POST http://localhost:5000/api/v1/orders/ord_vxXjMm7NRE/cancel HTTP/1.1
+Authorization: Bearer 7cbd15ce-d37e-4c7e-94a4-1e5e4f311cd8

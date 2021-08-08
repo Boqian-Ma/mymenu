@@ -1,0 +1,50 @@
+
+
+# Token
+# order id
+# item to be added id 3282dd57-9681-4ba9-b510-70e849b0c424
+
+
+
+### Login 
+POST http://localhost:5000/api/v1/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "adam@ataylor.xyz",
+    "password": "password"
+}
+
+### Get orders
+GET http://localhost:5000/api/v1/orders?res_id=res_DmP6PSebGv HTTP/1.1
+Authorization: Bearer 3282dd57-9681-4ba9-b510-70e849b0c424
+
+
+### Add item to order
+### Check price
+POST http://localhost:5000/api/v1/orders/:ord_id HTTP/1.1
+Authorization: Bearer 3282dd57-9681-4ba9-b510-70e849b0c424
+
+{
+    "order_id": "ord_kbiQ7OsaFe",
+    "item_id": "itm_XL2zEJ1pYK",
+    "quantity": 2
+}
+
+### Remove item from order
+### Check price
+
+
+### Remove everything from order
+### Check price
+
+### Update an item in an order
+{
+    "order_id": "ord_kbiQ7OsaFe",
+    "item_id": "itm_XL2zEJ1pYK",
+    "quantity": 0
+}
+### Check price
+DELETE  http://localhost:5000/api/v1/orders/ord_kbiQ7OsaFe/items/itm_XL2zEJ1pYK HTTP/1.1
+Authorization: Bearer 3282dd57-9681-4ba9-b510-70e849b0c424
+
