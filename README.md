@@ -1,4 +1,4 @@
-# Team Jamar COMP3900-W16a Capstone Project
+# MyMenu - a restaurant ordering system written in GoLang and React.js
 
 MyMenu
 
